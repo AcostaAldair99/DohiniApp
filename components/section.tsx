@@ -1,43 +1,60 @@
-// import React from 'react';
-// import type {PropsWithChildren} from 'react';
-// import styles from '../styles/styles'
+import React from 'react';
+import {View,Text} from 'react-native'
+import { componentStyles } from '../styles/styles';
+import MenuBox from './menuBox';
+import Line from './line';
+import ListComponent  from './listComponents';
 
-// type SectionProps = PropsWithChildren<{
-//   title: string;
-// }>;
 
-// import { Colors } from 'react-native/Libraries/NewAppScreen';
 
-// import {
-//   Text,
-//   useColorScheme,
-//   View,
-// } from 'react-native';
+interface menuSectionProps{
+  sectionTitle:string,
+  // sectionView: React.ReactNode
+}
 
-// function Section({children, title}: SectionProps): JSX.Element {
-//   const isDarkMode = useColorScheme() === 'dark';
-//   return (
-//     <View style={styles.sectionContainer}>
-//       <Text
-//         style={[
-//           styles.sectionTitle,
-//           {
-//             color: isDarkMode ? Colors.white : Colors.black,
-//           },
-//         ]}>
-//         {title}
-//       </Text>
-//       <Text
-//         style={[
-//           styles.sectionDescription,
-//           {
-//             color: isDarkMode ? Colors.light : Colors.dark,
-//           },
-//         ]}>
-//         {children}
-//       </Text>
-//     </View>
-//   );
-// }
+const MenuSection : React.FC<menuSectionProps> = ({sectionTitle})=>{
+  return(
+    <View style={componentStyles.sectionContainer}>
+        <Text style={componentStyles.sectionTitle}>{sectionTitle}</Text>
+        <Line/> 
+        <View style={{flex:1,flexDirection:'column', justifyContent:'space-between'}}>
+          <View style={{flexDirection:'row', justifyContent:'space-evenly',padding:0,borderColor:'#ff00ff',borderWidth:2}}>
+            <MenuBox title="Brands" logo='industry' /> 
+            <MenuBox title="Cars" logo="car" /> 
+          </View>
+            <View style={{flexDirection:'row',padding:0,borderColor:'#ff00ff',borderWidth:2,marginTop:5}}>
+            <MenuBox title="Trucks" logo='car' /> 
+            <MenuBox title="Keys" logo='key' /> 
+          </View>
+        </View>
+    </View>
 
-// export default Section;
+  )
+}
+
+
+const FavoriteBrandsSection : React.FC =()=>{
+  return(
+    <View style={componentStyles.sectionContainer}>
+        <Text style={componentStyles.sectionTitle}>Favorite Brands</Text>
+        <Line/> 
+        <ListComponent icon="user-circle"/>        
+    </View>
+
+  )
+}
+
+const FavoriteKeys : React.FC = () =>{
+  return(
+    <View style={componentStyles.sectionContainer}>
+        <Text style={componentStyles.sectionTitle}>Favorite Keys</Text>
+        <Line/> 
+        <ListComponent icon="key" />        
+    </View>
+
+  )
+}
+
+
+
+export default {MenuSection,FavoriteBrandsSection,FavoriteKeys};

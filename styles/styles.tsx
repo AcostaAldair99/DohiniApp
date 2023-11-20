@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 import { COLORS, FONT, SIZES } from "../constants";
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const componentStyles= StyleSheet.create({
     mainContainer: {
@@ -47,11 +48,58 @@ const componentStyles= StyleSheet.create({
         borderWidth:1,
     },
 
-    searchTitle: {
-        fontFamily: FONT.bold,
-        fontSize: SIZES.xLarge,
-        color: COLORS.primary,
+    sectionContainer:{
+        borderColor:"#ff0000",
+        borderWidth:1,
+        margin:10,
+        padding:10,
     },
+    
+    menuBox:{
+      flex:1,
+      margin:5,
+      padding:10,
+      height:130,
+      borderRadius:10,
+      backgroundColor:COLORS.blue,
+      flexDirection:'column'
+    },
+    menuBoxImage:{
+      width:60,
+      height:60,
+      resizeMode:'cover',
+      borderRadius:10
+    },
+    menuBoxTitle:{
+        fontFamily: FONT.bold,
+        fontSize: SIZES.medium,
+        color: COLORS.lightWhite,
+        fontWeight:'700'
+    },
+
+    latestSearchesContainer:{
+      margin:3,
+      height:900,
+      borderColor:COLORS.white,
+      borderWidth:2
+    },
+    
+    separatorLine:{
+      height: 2,
+      width: '100%',
+      backgroundColor:COLORS.black, 
+      marginTop: 10,
+      marginBottom: 10,
+      opacity:0.3
+    },
+
+    sectionTitle: {
+        fontFamily: FONT.bold,
+        fontSize: SIZES.medium,
+        color: COLORS.primary,
+        fontWeight:'700'
+    },
+
     noOfSearchedJobs: {
         marginTop: 2,
         fontFamily: FONT.medium,
@@ -66,8 +114,20 @@ const componentStyles= StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'row',
-        gap: 10
+        gap: 10,
+        padding:10,
+        margin:10,
+        borderColor:"#ff0000",
+        borderWidth:2
     },
+    footerTitle:{
+        fontFamily: FONT.bold,
+        fontSize: SIZES.medium,
+        color: COLORS.primary,
+        fontWeight:'700',
+        opacity:0.4
+    },
+
     paginationButton: {
         width: 30,
         height: 30,

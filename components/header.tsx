@@ -3,11 +3,10 @@ import {View,Text} from 'react-native'
 import {componentStyles,styles} from '../styles/styles'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { COLORS } from '../constants';
+
 interface headerProps{
   title:string,
 };
-
-
 
 
 const Header : React.FC<headerProps> = ({title}) => {
@@ -15,7 +14,7 @@ const Header : React.FC<headerProps> = ({title}) => {
       <View style={componentStyles.headerContainer}>
           <Icon.Button
         name= "navicon" 
-        onPress={()=>{console.log("left button")}}
+        onPress={()=>{}}
         size={26}
         iconStyle={{marginLeft:10}}
         backgroundColor={COLORS.lightWhite}
